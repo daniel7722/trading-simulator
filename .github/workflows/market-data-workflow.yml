@@ -1,0 +1,25 @@
+name: Microservice1 CI
+
+on:
+  push:
+    paths:
+      - 'market_data/**'
+  pull_request:
+    paths:
+      - 'market_data/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up C++
+        uses: actions/setup-cpp@v1
+        with:
+          cpp-version: '17'
+      - name: Configure CMake
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release
+      - name: Test
+        run: ctest --output-on-failure
