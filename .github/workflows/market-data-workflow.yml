@@ -13,18 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up microservice directory
+      - name: Update package lists
+        run:  apt update
+      - name: Set up CMake and ninja
+        run:  apt install cmake ninja-build
+      - name: Set up microservice directory run
         run: |
           cd market_data
           mkdir build
           cd build
-      - name: Update package lists
-        run: sudo apt update
-      - name: Set up CMake and ninja
-        run: sudo apt install cmake ninja-build
-      - name: Verify CMake installation
-        run: cmake --version
-      - name: Run CMake
-        run: cmake ./market_data
-      - name: Build
-        run: cmake --build ./market_data/.
+          cmake ..
+          cmake --build .
+#      - name: Verify CMake installation
+#        run: cmake --version
+#      - name: Run CMake
+#        run:
+#      - name: Build
+#        run: cmake --build ./market_data/.
