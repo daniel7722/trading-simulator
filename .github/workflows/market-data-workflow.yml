@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up C++
-        uses: actions/setup-cpp@v1
+        uses: actions/setup-cpp@v2
         with:
-          cpp-version: '17'
+          cpp-version: '20'
       - name: Configure CMake
         run: cmake -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build
