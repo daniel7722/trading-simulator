@@ -22,11 +22,7 @@ jobs:
           cd market_data
           mkdir build
           cd build
-          cmake ..
-          cmake --build .
-#      - name: Verify CMake installation
-#        run: cmake --version
-#      - name: Run CMake
-#        run:
-#      - name: Build
-#        run: cmake --build ./market_data/.
+      - name: Run CMake
+        run: cmake ..
+      - name: Build
+        run: cmake --build .
