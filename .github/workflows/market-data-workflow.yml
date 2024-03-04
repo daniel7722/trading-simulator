@@ -19,9 +19,9 @@ jobs:
           mkdir build
           cd build
       - name: Update package lists
-        run: apt update
+        run: sudo apt update
       - name: Set up CMake
-        run: apt install cmake
+        run: sudo apt install cmake
       - name: Verify CMake installation
         run: cmake --version
       - name: Run CMake
