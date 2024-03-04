@@ -13,9 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Set up C++
-        uses: lukka/run-cmake@v2
-        with:
-          cmakeListsOrSettingsJson: './market_data/CMakeLists.txt'
+      - name: Set up microservice directory
+        run: |
+          cd market_data
+          mkdir build
+          cd build
+      - name: Update package lists
+        run: apt update
+      - name: Set up CMake
+        run: apt install cmake
+      - name: Verify CMake installation
+        run: cmake --version
+      - name: Run CMake
+        run: cmake ..
       - name: Build
-        run: cmake --build . --target all -- -j 1
+        run: ninja
