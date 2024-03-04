@@ -27,4 +27,4 @@ jobs:
       - name: Run CMake
         run: cmake ./market_data
       - name: Build
-        run: cmake --build .
+        run: cmake --build ./market_data/.
