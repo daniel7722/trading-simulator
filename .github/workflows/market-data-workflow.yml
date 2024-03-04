@@ -16,6 +16,6 @@ jobs:
       - name: Set up C++
         uses: lukka/run-cmake@v2
         with:
-          cmakeListsOrSettingsJson: 'market_data/CMakeLists.txt'
+          cmakeListsOrSettingsJson: './market_data/CMakeLists.txt'
       - name: Build
         run: cmake --build . --target all -- -j 1
