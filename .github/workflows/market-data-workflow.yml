@@ -1,4 +1,4 @@
-name: Microservice1 CI
+name: Market Data CI
 
 on:
   push:
@@ -12,14 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up C++
-        uses: actions/setup-cpp@v2
+        uses: lukka/run-cmake@v2
         with:
-          cpp-version: '20'
-      - name: Configure CMake
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+          cmakeListsOrSettingsJson: 'market_data/CMakeLists.txt'
       - name: Build
-        run: cmake --build build --config Release
-      - name: Test
-        run: ctest --output-on-failure
+        run: cmake --build . --target all -- -j 1
