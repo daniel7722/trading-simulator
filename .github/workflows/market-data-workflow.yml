@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Update package lists
-        run:  apt update
+        run:  sudo apt update
       - name: Set up CMake and ninja
-        run:  apt install cmake ninja-build
+        run:  sudo apt install cmake ninja-build
       - name: Set up microservice directory run
         run: |
           cd market_data
