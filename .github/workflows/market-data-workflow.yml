@@ -20,8 +20,8 @@ jobs:
           cd build
       - name: Update package lists
         run: sudo apt update
-      - name: Set up CMake
-        run: sudo apt install cmake
+      - name: Set up CMake and ninja
+        run: sudo apt install cmake ninja-build
       - name: Verify CMake installation
         run: cmake --version
       - name: Run CMake
