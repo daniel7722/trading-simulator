@@ -25,6 +25,6 @@ jobs:
       - name: Verify CMake installation
         run: cmake --version
       - name: Run CMake
-        run: cmake .
+        run: cmake ./market_data
       - name: Build
         run: ninja
