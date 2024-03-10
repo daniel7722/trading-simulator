@@ -1,0 +1,27 @@
+name: Market Data CI
+
+on:
+  push:
+    paths:
+      - 'option_pricing/**'
+  pull_request:
+    paths:
+      - 'option_pricing/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update package lists
+        run:  sudo apt update
+      - name: Set up CMake and ninja
+        run:  sudo apt install cmake ninja-build
+      - name: Set up microservice directory run
+        run: mkdir option_pricing/build
+      - name: Run CMake
+        run: cmake ..
+        working-directory: ./option_pricing/build
+      - name: Build
+        run: cmake --build .
+        working-directory: ./option_pricing/build

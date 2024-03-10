@@ -3,7 +3,7 @@
 
 int main() {
     double mu = 0.05;
-    double sigma = 0.2;
+    double sigma = 0.3;
     double initialPrice = 100.0;
     double strikePrice = 110.0;
     double maturity = 1.0;
