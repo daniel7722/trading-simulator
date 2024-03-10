@@ -22,7 +22,9 @@ jobs:
           cd market_data
           mkdir build
           cd build
-      - name: Run CMake
-        run: cmake ..
-      - name: Build
-        run: cmake --build .
+          cmake ..
+          cmake --build .
+#      - name: Run CMake
+#        run: cmake ..
+#      - name: Build
+#        run: cmake --build .
