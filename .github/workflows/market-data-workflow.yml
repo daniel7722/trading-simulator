@@ -23,5 +23,5 @@ jobs:
         run: cmake .
         working-directory: ./market_data
       - name: Build
-        run: cmake --build .
-        working-directory: ./market_data/build
+        run: cmake --build ./build
+        working-directory: ./market_data
