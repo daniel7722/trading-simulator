@@ -19,7 +19,6 @@ jobs:
         run:  sudo apt install cmake ninja-build
       - name: Set up microservice directory run
         run: mkdir market_data/build
-        working-directory: ./market_data
       - name: Run CMake
         run: cmake .
         working-directory: ./market_data
