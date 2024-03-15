@@ -8,7 +8,7 @@ int main() {
     double strikePrice = 110.0;
     double maturity = 1.0;
     int numPaths = 1000000;
-    int numThreads = 2000;
+    int numThreads = 8;
 
     Pricing model(mu, sigma);
     double optionPrice = model.monteCarloOptionPrice(initialPrice, strikePrice, maturity, numPaths, numThreads);

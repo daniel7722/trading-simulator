@@ -1,4 +1,4 @@
-name: Market Data CI
+name: Option Pricing CI
 
 on:
   push:
