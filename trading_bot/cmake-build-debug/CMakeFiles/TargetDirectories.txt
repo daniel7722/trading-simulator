@@ -1,3 +1,0 @@
-/Users/danielhuang/Project/trading-simulator/trading_bot/cmake-build-debug/CMakeFiles/trading_bot.dir
-/Users/danielhuang/Project/trading-simulator/trading_bot/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/danielhuang/Project/trading-simulator/trading_bot/cmake-build-debug/CMakeFiles/rebuild_cache.dir
